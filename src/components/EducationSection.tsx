@@ -22,7 +22,7 @@ const EducationSection = () => {
       title: "10th Standard",
       institution: "Secondary Education",
       description: "Maths-Science background",
-      percentage: "High Percentile",
+      percentage: "91.67%",
     },
   ];
 
