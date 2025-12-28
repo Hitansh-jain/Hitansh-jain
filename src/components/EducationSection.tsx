@@ -15,7 +15,7 @@ const EducationSection = () => {
       title: "12th Standard",
       institution: "Maths-Science Stream",
       description: "Strong foundation in Mathematics & Science",
-      percentage: "High Percentile",
+      percentage: "72.20%",
     },
     {
       year: "2021",
