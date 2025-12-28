@@ -1,4 +1,4 @@
-import { Brain, Palette, Users, Lightbulb, Cpu, Video, MessageSquare, Sparkles, Zap, Target, Rocket, Code } from "lucide-react";
+import { Brain, Palette, Users, Lightbulb, Cpu, MessageSquare, Sparkles, Zap, Target, Rocket, Code } from "lucide-react";
 
 const SkillsSection = () => {
   const coreSkills = [
@@ -6,37 +6,37 @@ const SkillsSection = () => {
       title: "Prompt Engineering",
       description: "Crafting precise prompts to unlock AI's full potential",
       icon: Brain,
-      gradient: "from-primary via-primary/80 to-neon-green",
+      color: "primary",
     },
     {
       title: "AI Agent Design",
       description: "Building intelligent automated workflows",
       icon: Cpu,
-      gradient: "from-neon-green via-primary/60 to-primary",
+      color: "accent",
     },
     {
       title: "Output Perfection",
       description: "Refining AI outputs to achieve flawless results",
       icon: Target,
-      gradient: "from-primary/80 via-neon-green to-primary",
+      color: "primary",
     },
     {
       title: "Vision Architecture",
       description: "Designing systems that solve real problems",
       icon: Lightbulb,
-      gradient: "from-neon-green via-primary to-primary/80",
+      color: "accent",
     },
     {
       title: "Workflow Automation",
       description: "Streamlining processes for maximum efficiency",
       icon: Zap,
-      gradient: "from-primary via-neon-green/80 to-neon-green",
+      color: "primary",
     },
     {
       title: "Creative Direction",
       description: "Blending technology with creative vision",
       icon: Palette,
-      gradient: "from-primary/70 via-primary to-neon-green",
+      color: "accent",
     },
   ];
 
@@ -49,82 +49,105 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 md:py-32 px-6 bg-secondary/20">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-28 md:py-36 px-6 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-background" />
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl pointer-events-none translate-x-1/2 -translate-y-1/2" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-mono text-primary uppercase tracking-widest mb-4">
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-gradient text-xs font-mono text-primary uppercase tracking-[0.2em] mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Expertise
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             The <span className="gradient-text">'Smart'</span> Stack
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Not just skills—a philosophy of leveraging AI to achieve the extraordinary
           </p>
         </div>
 
-        {/* Core Skills - Hexagonal/Radial Layout */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-16">
+        {/* Core Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-20">
           {coreSkills.map((skill, index) => (
             <div
               key={skill.title}
               className="group relative"
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{ animationDelay: `${index * 80}ms` }}
             >
-              {/* Card */}
-              <div className="glass-card p-6 rounded-2xl h-full transition-all duration-500 hover:scale-105 hover:border-primary/40 relative overflow-hidden">
-                {/* Background glow on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+              <div className="glass-card-hover p-7 rounded-3xl h-full relative overflow-hidden">
+                {/* Hover gradient overlay */}
+                <div 
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                    skill.color === 'primary' 
+                      ? 'bg-gradient-to-br from-primary/10 via-transparent to-transparent' 
+                      : 'bg-gradient-to-br from-accent/10 via-transparent to-transparent'
+                  }`} 
+                />
                 
-                {/* Icon container with rotating border */}
-                <div className="relative mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-neon-green/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-neon-green/20 transition-all duration-300">
-                    <skill.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
+                {/* Icon */}
+                <div className="relative mb-5">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                    skill.color === 'primary' 
+                      ? 'bg-primary/10 group-hover:bg-primary/20' 
+                      : 'bg-accent/10 group-hover:bg-accent/20'
+                  }`}>
+                    <skill.icon className={`w-7 h-7 transition-all duration-300 ${
+                      skill.color === 'primary' ? 'text-primary' : 'text-accent'
+                    } group-hover:icon-glow`} />
                   </div>
-                  {/* Decorative dot */}
-                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary/60 group-hover:bg-primary group-hover:animate-pulse" />
+                  {/* Decorative corner */}
+                  <div className={`absolute -top-1 -right-1 w-3 h-3 rounded-full opacity-60 group-hover:opacity-100 transition-opacity ${
+                    skill.color === 'primary' ? 'bg-primary' : 'bg-accent'
+                  }`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-glow transition-all">
                   {skill.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {skill.description}
                 </p>
 
-                {/* Bottom gradient line */}
-                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${skill.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                {/* Bottom accent line */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-all duration-500 ${
+                  skill.color === 'primary' 
+                    ? 'bg-gradient-to-r from-primary via-primary/50 to-transparent' 
+                    : 'bg-gradient-to-r from-accent via-accent/50 to-transparent'
+                }`} />
               </div>
             </div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/50" />
-          <Sparkles className="w-5 h-5 text-primary animate-pulse" />
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/50" />
+        <div className="flex items-center justify-center gap-6 mb-16">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+          <Sparkles className="w-6 h-6 text-primary animate-pulse icon-glow" />
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         </div>
 
         {/* Soft Skills */}
-        <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-foreground mb-2">Beyond Technical</h3>
-          <p className="text-sm text-muted-foreground">The human skills that amplify AI mastery</p>
+        <div className="text-center mb-10">
+          <h3 className="text-2xl font-bold text-foreground mb-3">Beyond Technical</h3>
+          <p className="text-muted-foreground">The human skills that amplify AI mastery</p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-4">
           {softSkills.map((skill, index) => (
             <div
               key={skill.name}
-              className="glass-card px-5 py-3 rounded-full flex items-center gap-3 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group cursor-default"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="glass-card px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group cursor-default"
+              style={{ animationDelay: `${index * 60}ms` }}
             >
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <skill.icon className="w-4 h-4 text-primary" />
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                <skill.icon className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+              <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                 {skill.name}
               </span>
             </div>
