@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
+    --background: 220 15% 5%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 5%;
+    --card: 220 15% 8%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 5%;
+    --popover: 220 15% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 2%;
+    --primary: 165 80% 45%;
+    --primary-foreground: 220 15% 5%;
 
-    --secondary: 0 0% 8%;
+    --secondary: 220 15% 12%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 5% 55%;
 
-    --accent: 0 0% 15%;
+    --accent: 220 15% 15%;
     --accent-foreground: 0 0% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
-    --ring: 0 0% 95%;
+    --border: 220 10% 15%;
+    --input: 220 10% 15%;
+    --ring: 165 80% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -53,21 +53,33 @@
   }
 
   ::selection {
-    @apply bg-foreground/20 text-foreground;
+    @apply bg-primary/20 text-foreground;
   }
 }
 
 @layer components {
-  .minimal-card {
-    @apply bg-card border border-border rounded-lg;
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border rounded-xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary/30 hover:bg-card;
   }
 
   .minimal-badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium text-muted-foreground border border-border rounded-full;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-muted-foreground border border-border rounded-full;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground;
+  .section-label {
+    @apply text-xs text-muted-foreground tracking-widest uppercase;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
   }
 }
 
@@ -118,5 +130,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--primary) / 0.5);
 }

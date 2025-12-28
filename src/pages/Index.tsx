@@ -8,8 +8,22 @@ import ProjectSection from "@/components/ProjectSection";
 import ResumeSection from "@/components/ResumeSection";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const Index = () => {
+  // Disable right-click
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+    
+    document.addEventListener("contextmenu", handleContextMenu);
+    
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -20,8 +34,6 @@ const Index = () => {
         />
         <meta name="keywords" content="Hitansh Jain, AI, Portfolio, Udaipur, Prompt Engineering, AI Agent" />
       </Helmet>
-      
-      {/* Clean minimal background */}
       
       {/* Navigation */}
       <Navigation />
