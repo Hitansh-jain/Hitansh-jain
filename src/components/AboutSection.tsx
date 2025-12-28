@@ -33,7 +33,7 @@ const AboutSection = () => {
               high-quality results. He's refreshingly honest about using AI to build 
               projects like the <span className="text-foreground font-medium">'Eco Waste Wise Agent'</span> because 
               he believes the real skill lies in{" "}
-              <span className="neon-text">perfection and prompting</span>, not just manual labor.
+              <span className="neon-text">I don't just build; I architect. While others focus on manual coding, I focus on 'Prompt Engineering' and 'Output Perfection'. My projects, like the Eco Waste Wise Agent, are a testament to how human vision and AI precision can come together to solve real-world problems.</span>, not just manual labor.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Despite being a beginner once, Hitansh guided{" "}
