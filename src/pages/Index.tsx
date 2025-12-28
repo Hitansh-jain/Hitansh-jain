@@ -21,8 +21,7 @@ const Index = () => {
         <meta name="keywords" content="Hitansh Jain, AI, Portfolio, Udaipur, Prompt Engineering, AI Agent" />
       </Helmet>
       
-      {/* Grain overlay */}
-      <div className="grain-overlay" />
+      {/* Clean minimal background */}
       
       {/* Navigation */}
       <Navigation />
