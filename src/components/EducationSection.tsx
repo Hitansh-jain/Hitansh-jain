@@ -5,7 +5,7 @@ const EducationSection = () => {
     {
       year: "2023-2026",
       title: "B.Sc. (Final Year)",
-      institution: "Govt. Shri Sanwariya Ji College, Mandfia",
+      institution: "Shri Sanwaliaji Government College, Mandaphia",
       university: "MLSU Udaipur",
       status: "Currently Pursuing",
       highlight: true,
