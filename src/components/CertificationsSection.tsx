@@ -66,6 +66,12 @@ const CertificationsSection = () => {
       date: "2025",
       category: "Computer Science",
       color: "from-purple-500 to-pink-500",
+      verifiable: true,
+      details: {
+        badgeName: "Advance Diploma in Computer Science",
+        verifiedBy: "ShikshaPro Academy",
+        skills: ["Programming Fundamentals", "Web Development", "Database Management", "Software Engineering"],
+      },
     },
     {
       id: "rcsa",
@@ -74,6 +80,12 @@ const CertificationsSection = () => {
       date: "2025",
       category: "Computer Science",
       color: "from-orange-500 to-amber-500",
+      verifiable: true,
+      details: {
+        badgeName: "Diploma in Computer Science",
+        verifiedBy: "RCSA (Rajasthan Computer Saksharta Abhiyan)",
+        skills: ["Computer Basics", "Office Applications", "Internet & Email", "Operating Systems"],
+      },
     },
     {
       id: "rscit",
@@ -82,6 +94,12 @@ const CertificationsSection = () => {
       date: "November 2022",
       category: "IT Fundamentals",
       color: "from-red-500 to-rose-500",
+      verifiable: true,
+      details: {
+        badgeName: "Rajasthan State Certificate in Information Technology",
+        verifiedBy: "VMOU (Vardhman Mahaveer Open University), Kota",
+        skills: ["Computer Fundamentals", "MS Office", "Internet Basics", "Digital Literacy"],
+      },
     },
   ];
 
