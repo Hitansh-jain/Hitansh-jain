@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        sans: ["Sora", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
@@ -51,10 +51,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        neon: {
-          cyan: "hsl(180 100% 50%)",
-          green: "hsl(160 100% 40%)",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,8 +75,8 @@ export default {
           to: { opacity: "1" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(180 100% 50% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(180 100% 50% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(165 100% 46% / 0.4)" },
+          "50%": { boxShadow: "0 0 50px hsl(165 100% 46% / 0.7)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -89,6 +85,14 @@ export default {
         "slide-in": {
           from: { opacity: "0", transform: "translateX(-20px)" },
           to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "blur-in": {
+          from: { opacity: "0", filter: "blur(10px)", transform: "translateY(20px)" },
+          to: { opacity: "1", filter: "blur(0)", transform: "translateY(0)" },
+        },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.9)" },
+          to: { opacity: "1", transform: "scale(1)" },
         },
       },
       animation: {
@@ -99,6 +103,8 @@ export default {
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "slide-in": "slide-in 0.5s ease-out forwards",
+        "blur-in": "blur-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "scale-in": "scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },
