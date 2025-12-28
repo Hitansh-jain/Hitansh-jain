@@ -18,17 +18,17 @@ const AboutSection = () => {
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 text-muted-foreground">
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-primary" />
-            <a href="mailto:hitanshjain987@gmail.com" className="hover:text-primary transition-colors">
-              hitanshjain987@gmail.com
+            <a href="mailto:hitanshj281@gmail.com" className="hover:text-primary transition-colors">
+              hitanshj281@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-primary" />
-            <span>January 11, 2004</span>
+            <span>July 7, 2005</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-primary" />
-            <span>Kota, Rajasthan, India</span>
+            <span>Kanore, Udaipur, India</span>
           </div>
         </div>
 
