@@ -92,13 +92,6 @@ const ResumeSection = () => {
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Featured Project</div>
-    <div class="item">
-      <div class="item-title">Eco Waste Wise Agent</div>
-      <div class="item-subtitle">AI-powered sustainability solution. Architected the vision, leveraged AI for execution, refined with human intelligence.</div>
-    </div>
-  </div>
 
   <div class="section">
     <div class="section-title">Skills & Expertise</div>
