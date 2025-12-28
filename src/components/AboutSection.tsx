@@ -21,7 +21,7 @@ const AboutSection = () => {
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
-            Kanore, Udaipur, India
+            Kanore, Udaipur, Rajasthan, India
           </div>
         </div>
 
