@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 const EducationSection = () => {
   const education = [
     {
-      year: "2024-2026",
+      year: "2023-2026",
       title: "B.Sc. (Final Year)",
       institution: "Govt. Shri Sanwariya Ji College, Mandfia",
       university: "MLSU Udaipur",
@@ -11,14 +11,14 @@ const EducationSection = () => {
       highlight: true,
     },
     {
-      year: "2022",
+      year: "2023",
       title: "12th Standard",
       institution: "Maths-Science Stream",
       description: "Strong foundation in Mathematics & Science",
       percentage: "High Percentile",
     },
     {
-      year: "2020",
+      year: "2021",
       title: "10th Standard",
       institution: "Secondary Education",
       description: "Maths-Science background",
