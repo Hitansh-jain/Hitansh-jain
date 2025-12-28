@@ -1,28 +1,63 @@
-import { Award, ExternalLink, Calendar, Building2 } from "lucide-react";
+import { Award, ExternalLink, Calendar, Building2, X, CheckCircle, FileText } from "lucide-react";
 import { useState } from "react";
+
+interface CertificationDetails {
+  enrollmentCode?: string;
+  userCode?: string;
+  skills?: string[];
+  verifiedBy?: string;
+  badgeName?: string;
+}
+
+interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  platform?: string;
+  date: string;
+  category: string;
+  color: string;
+  highlight?: boolean;
+  verifiable?: boolean;
+  details?: CertificationDetails;
+}
 
 const CertificationsSection = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
-  const certifications = [
+  const certifications: Certification[] = [
     {
       id: "deloitte",
       title: "Data Analytics Job Simulation",
       issuer: "Deloitte Australia",
       platform: "Forage",
-      date: "November 2025",
+      date: "November 20, 2025",
       category: "Data Analytics",
       color: "from-cyan-500 to-blue-500",
+      verifiable: true,
+      details: {
+        enrollmentCode: "FW9PucCRHDkLSHZZ3",
+        userCode: "691f337ee5978bc9456119f1",
+        skills: ["Data Analysis", "Forensic Technology"],
+        verifiedBy: "Tina McCreery, Chief Human Resources Officer, Deloitte",
+      },
     },
     {
       id: "google-ai",
       title: "5-Day AI Agents Intensive Course",
-      issuer: "Google / ULS",
+      issuer: "Kaggle & Google",
       platform: "AI Intensive",
-      date: "December 2025",
+      date: "December 18, 2025",
       category: "AI Specialist",
       color: "from-green-500 to-emerald-500",
       highlight: true,
+      verifiable: true,
+      details: {
+        badgeName: "5-Day AI Agents Intensive Course with Google",
+        verifiedBy: "Kaggle & Google",
+        skills: ["AI Agents", "Prompt Engineering", "Google AI Tools"],
+      },
     },
     {
       id: "shikshapr",
@@ -120,10 +155,20 @@ const CertificationsSection = () => {
                       <span className="text-xs font-mono text-muted-foreground">
                         ID: {cert.id.toUpperCase()}-2025
                       </span>
-                      <button className="flex items-center gap-1 text-xs text-primary hover:underline">
-                        <span>Verify</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </button>
+                      {cert.verifiable ? (
+                        <button
+                          onClick={() => setSelectedCert(cert)}
+                          className="flex items-center gap-1 text-xs text-primary hover:underline"
+                        >
+                          <span>Verify</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </button>
+                      ) : (
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <CheckCircle className="w-3 h-3" />
+                          <span>Verified</span>
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -132,6 +177,130 @@ const CertificationsSection = () => {
           ))}
         </div>
       </div>
+
+      {/* Verification Modal */}
+      {selectedCert && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            onClick={() => setSelectedCert(null)}
+          />
+
+          {/* Modal */}
+          <div className="relative glass-card rounded-2xl max-w-lg w-full p-6 animate-scale-in border border-primary/20">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedCert(null)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-secondary transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Gradient header */}
+            <div className={`h-2 bg-gradient-to-r ${selectedCert.color} rounded-full mb-6`} />
+
+            {/* Verified badge */}
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+              </div>
+              <div>
+                <span className="text-green-500 font-semibold text-sm">Verified Certificate</span>
+                <p className="text-xs text-muted-foreground">Authentic credential</p>
+              </div>
+            </div>
+
+            {/* Certificate title */}
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              {selectedCert.title}
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Issued by {selectedCert.issuer}
+            </p>
+
+            {/* Details */}
+            <div className="space-y-4 bg-secondary/30 rounded-xl p-4">
+              <div className="flex items-center gap-3">
+                <FileText className="w-5 h-5 text-primary" />
+                <div>
+                  <span className="text-xs text-muted-foreground block">Certificate Name</span>
+                  <span className="text-sm font-medium">
+                    {selectedCert.details?.badgeName || selectedCert.title}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Building2 className="w-5 h-5 text-primary" />
+                <div>
+                  <span className="text-xs text-muted-foreground block">Issuing Organization</span>
+                  <span className="text-sm font-medium">{selectedCert.issuer}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Calendar className="w-5 h-5 text-primary" />
+                <div>
+                  <span className="text-xs text-muted-foreground block">Issue Date</span>
+                  <span className="text-sm font-medium">{selectedCert.date}</span>
+                </div>
+              </div>
+
+              {selectedCert.details?.enrollmentCode && (
+                <div className="flex items-center gap-3">
+                  <Award className="w-5 h-5 text-primary" />
+                  <div>
+                    <span className="text-xs text-muted-foreground block">Enrollment Verification Code</span>
+                    <span className="text-sm font-mono text-primary">{selectedCert.details.enrollmentCode}</span>
+                  </div>
+                </div>
+              )}
+
+              {selectedCert.details?.userCode && (
+                <div className="flex items-center gap-3">
+                  <Award className="w-5 h-5 text-primary" />
+                  <div>
+                    <span className="text-xs text-muted-foreground block">User Verification Code</span>
+                    <span className="text-sm font-mono text-primary">{selectedCert.details.userCode}</span>
+                  </div>
+                </div>
+              )}
+
+              {selectedCert.details?.verifiedBy && (
+                <div className="pt-3 border-t border-border/50">
+                  <span className="text-xs text-muted-foreground block mb-1">Verified By</span>
+                  <span className="text-sm">{selectedCert.details.verifiedBy}</span>
+                </div>
+              )}
+
+              {selectedCert.details?.skills && (
+                <div className="pt-3 border-t border-border/50">
+                  <span className="text-xs text-muted-foreground block mb-2">Skills Validated</span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedCert.details.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 rounded-full bg-primary/10 text-xs font-medium text-primary"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedCert(null)}
+              className="w-full mt-6 py-3 rounded-xl bg-primary/10 text-primary font-medium hover:bg-primary/20 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
