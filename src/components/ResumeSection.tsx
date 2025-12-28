@@ -51,11 +51,11 @@ const ResumeSection = () => {
       <div class="item-subtitle">Govt. Shri Sanwariya Ji College, Mandfia (MLSU Udaipur)</div>
     </div>
     <div class="item">
-      <div class="item-title">12th Standard (Maths-Science) - 72.20%</div>
+      <div class="item-title">12th Standard (RBSE, Maths-Science) - 72.20%</div>
       <div class="item-subtitle">Completed 2023</div>
     </div>
     <div class="item">
-      <div class="item-title">10th Standard - 91.67%</div>
+      <div class="item-title">10th Standard (RBSE) - 91.67%</div>
       <div class="item-subtitle">Maths-Science Background - Completed 2021</div>
     </div>
   </div>

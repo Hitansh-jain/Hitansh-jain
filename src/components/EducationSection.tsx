@@ -11,13 +11,13 @@ const EducationSection = () => {
     },
     {
       year: "2023",
-      title: "12th Standard",
+      title: "12th Standard (RBSE)",
       institution: "Maths-Science Stream",
       percentage: "72.20%",
     },
     {
       year: "2021",
-      title: "10th Standard",
+      title: "10th Standard (RBSE)",
       institution: "Maths-Science",
       percentage: "91.67%",
     },
