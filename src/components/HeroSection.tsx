@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Real-World Ideas. AI Execution.";
-  
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -15,12 +13,9 @@ const HeroSection = () => {
         clearInterval(timer);
       }
     }, 80);
-    
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+  return <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Background gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-float" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-neon-green/10 rounded-full blur-[100px] animate-float delay-300" />
@@ -30,7 +25,7 @@ const HeroSection = () => {
         {/* Name badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 opacity-0 animate-fade-up">
           <span className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
-          <span className="text-sm font-mono text-muted-foreground">Based in Udaipur, Rajasthan</span>
+          <span className="text-sm font-mono text-muted-foreground">From kanore, Udaipur, Rajasthan</span>
         </div>
         
         {/* Main heading */}
@@ -65,16 +60,11 @@ const HeroSection = () => {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up delay-500">
-        <a 
-          href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-        >
+        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
           <span className="text-xs font-mono uppercase tracking-widest">Scroll</span>
           <ChevronDown className="w-5 h-5 animate-bounce" />
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

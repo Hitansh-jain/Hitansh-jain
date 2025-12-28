@@ -1,14 +1,19 @@
 import { Sparkles, Users, Zap } from "lucide-react";
-
 const AboutSection = () => {
-  const stats = [
-    { icon: Users, value: "1000+", label: "People Helped" },
-    { icon: Sparkles, value: "AI", label: "Powered Solutions" },
-    { icon: Zap, value: "100%", label: "Efficiency Focused" },
-  ];
-
-  return (
-    <section id="about" className="py-24 md:py-32 px-6">
+  const stats = [{
+    icon: Users,
+    value: "1000+",
+    label: "People Helped"
+  }, {
+    icon: Sparkles,
+    value: "AI",
+    label: "Powered Solutions"
+  }, {
+    icon: Zap,
+    value: "100%",
+    label: "Efficiency Focused"
+  }];
+  return <section id="about" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -40,12 +45,9 @@ const AboutSection = () => {
 
           {/* Stats cards */}
           <div className="grid gap-4">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="glass-card p-6 rounded-xl flex items-center gap-5 group hover:border-primary/30 transition-all duration-300"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {stats.map((stat, index) => <div key={stat.label} className="glass-card p-6 rounded-xl flex items-center gap-5 group hover:border-primary/30 transition-all duration-300" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <stat.icon className="w-6 h-6 text-primary" />
                 </div>
@@ -53,13 +55,10 @@ const AboutSection = () => {
                   <p className="text-2xl font-bold text-foreground">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
