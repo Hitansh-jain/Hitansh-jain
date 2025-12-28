@@ -1,64 +1,99 @@
-import { Sparkles, Users, Zap } from "lucide-react";
+import { Mail, Calendar, MapPin, Heart, Sparkles } from "lucide-react";
+
 const AboutSection = () => {
-  const stats = [{
-    icon: Users,
-    value: "1000+",
-    label: "People Helped"
-  }, {
-    icon: Sparkles,
-    value: "AI",
-    label: "Powered Solutions"
-  }, {
-    icon: Zap,
-    value: "100%",
-    label: "Efficiency Focused"
-  }];
-  return <section id="about" className="py-24 md:py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+  return (
+    <section id="about" className="py-24 md:py-32 px-6">
+      <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            The Story
+            About Me
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            From Beginner to <span className="gradient-text">Guide</span>
+            Meet <span className="gradient-text">Hitansh Jain</span>
           </h2>
         </div>
 
-        {/* Story content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="space-y-6">
+        {/* Personal Info */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4 text-primary" />
+            <a href="mailto:hitanshj281@gmail.com" className="hover:text-primary transition-colors">
+              hitanshj281@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-primary" />
+            <span>July 7, 2005</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-primary" />
+            <span>Kanore, Udaipur, India</span>
+          </div>
+        </div>
+
+        {/* Story Content */}
+        <div className="space-y-8 text-center max-w-3xl mx-auto">
+          {/* Main Introduction */}
+          <p className="text-xl md:text-2xl text-foreground leading-relaxed font-medium">
+            I'm <span className="neon-text">Hitansh Jain</span>. Even though I'm not from a Computer Science background, 
+            I'm breaking into this field through <span className="text-primary">pure hard work</span>.
+          </p>
+
+          {/* Philosophy */}
+          <div className="py-6 border-y border-border/30">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Hitansh is a visionary who leverages AI and modern tools to achieve 
-              high-quality results. He's refreshingly honest about using AI to build 
-              projects like the <span className="text-foreground font-medium">'Eco Waste Wise Agent'</span> because 
-              he believes the real skill lies in{" "}
-              <span className="neon-text">Kanore, Udaipur, Rajasthan</span>, not just manual labor.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Despite being a beginner once, Hitansh guided{" "}
-              <span className="text-foreground font-medium">1000+ people</span> on social media 
-              during Google's 5-day AI Intensive course, proving that understanding 
-              and sharing knowledge is just as valuable as creating it.
+              Many believe a degree is everything, but I strongly feel that{" "}
+              <span className="text-foreground font-semibold">skills matter more than a piece of paper</span>. 
+              I'm constantly pushing myself to be better in every field I touch.
             </p>
           </div>
 
-          {/* Stats cards */}
-          <div className="grid gap-4">
-            {stats.map((stat, index) => <div key={stat.label} className="glass-card p-6 rounded-xl flex items-center gap-5 group hover:border-primary/30 transition-all duration-300" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
-                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <stat.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              </div>)}
+          {/* Honesty Section */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-center gap-2 text-primary">
+              <Heart className="w-5 h-5" />
+              <span className="text-sm font-mono uppercase tracking-widest">My Honest Truth</span>
+              <Heart className="w-5 h-5" />
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed">
+              I don't pretend to know everything. I'm a <span className="text-foreground">learner first</span>, 
+              always curious, always growing. I believe in being real about my journey—the struggles, 
+              the failures, and the small wins that keep me going.
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              While others chase shortcuts, I'm building my foundation{" "}
+              <span className="text-foreground">brick by brick</span>. Every day, I wake up with one goal: 
+              to be <span className="text-primary">1% better</span> than yesterday.
+            </p>
+          </div>
+
+          {/* Motivation */}
+          <div className="pt-6">
+            <div className="flex items-center justify-center gap-2 text-primary mb-4">
+              <Sparkles className="w-5 h-5" />
+              <span className="text-sm font-mono uppercase tracking-widest">What Drives Me</span>
+              <Sparkles className="w-5 h-5" />
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed">
+              I'm not here to prove anyone wrong—I'm here to prove to{" "}
+              <span className="text-foreground font-medium">myself</span> that backgrounds don't define futures. 
+              With the rise of AI, I've found my calling: mastering the art of{" "}
+              <span className="neon-text">directing technology</span> rather than competing with it.
+            </p>
+
+            <p className="text-lg text-foreground mt-6 font-medium">
+              The journey is long, but I'm in it for the{" "}
+              <span className="gradient-text">long haul</span>.
+            </p>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
