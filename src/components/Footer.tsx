@@ -1,4 +1,4 @@
-import { Heart, Sparkles } from "lucide-react";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,13 +32,7 @@ const Footer = () => {
         </div>
 
         {/* Credits */}
-        <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <span>Built with</span>
-          <Heart className="w-3 h-3 text-destructive fill-current" />
-          <span>&</span>
-          <Sparkles className="w-3 h-3 text-primary" />
-          <span>AI</span>
-          <span className="mx-2">•</span>
+        <div className="text-xs text-muted-foreground">
           <span>© {currentYear} Hitansh Jain</span>
         </div>
 
