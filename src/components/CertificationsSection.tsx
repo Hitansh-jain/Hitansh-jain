@@ -115,7 +115,7 @@ const CertificationsSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-mono text-primary uppercase tracking-widest mb-4">
             Credentials
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             Certification <span className="gradient-text">Vault</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
@@ -124,7 +124,7 @@ const CertificationsSection = () => {
         </div>
 
         {/* Certifications grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {certifications.map((cert) => (
             <div
               key={cert.id}

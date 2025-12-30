@@ -34,7 +34,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Core Skills */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border mb-16">
           {coreSkills.map((skill) => (
             <div key={skill.title} className="bg-background p-6 hover:bg-card transition-colors">
               <div className="flex items-start gap-4">

@@ -67,7 +67,7 @@ const HeroSection = () => {
         </p>
         
         {/* Name */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 opacity-0 animate-fade-up delay-100">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 opacity-0 animate-fade-up delay-100">
           Hitansh <span className="gradient-text">Jain</span>
         </h1>
         
