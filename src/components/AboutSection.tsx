@@ -1,18 +1,17 @@
 import { Mail, Calendar, MapPin } from "lucide-react";
+import aboutBg from "@/assets/about-bg.png";
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 md:py-32 px-6 border-t border-border relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url('https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767068610/Screenshot_2025-12-30_095258_gzhsen.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
+      {/* Background Image - cropped from bottom to hide watermark */}
+      <div className="absolute inset-0 opacity-25 overflow-hidden">
+        <img 
+          src={aboutBg} 
+          alt="" 
+          className="w-full h-[110%] object-cover object-top"
+        />
+      </div>
       
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
