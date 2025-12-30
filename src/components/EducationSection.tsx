@@ -1,4 +1,5 @@
 import { GraduationCap } from "lucide-react";
+import educationIllustration from "@/assets/education-illustration.png";
 
 const EducationSection = () => {
   const education = [
@@ -25,12 +26,23 @@ const EducationSection = () => {
 
   return (
     <section id="education" className="py-24 md:py-32 px-6 border-t border-border">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <p className="section-label mb-4">Academic Journey</p>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-12">
-          Education <span className="gradient-text">Timeline</span>
-        </h2>
+      <div className="max-w-4xl mx-auto">
+        {/* Header with illustration */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="flex-1">
+            <p className="section-label mb-4">Academic Journey</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Education <span className="gradient-text">Timeline</span>
+            </h2>
+          </div>
+          <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+            <img 
+              src={educationIllustration} 
+              alt="Education illustration" 
+              className="w-full h-full object-contain animate-fade-in"
+            />
+          </div>
+        </div>
 
         {/* Timeline - Compact */}
         <div className="space-y-6">
