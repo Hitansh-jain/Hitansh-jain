@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 pointer-events-none transition-all duration-300"
         style={{
-          backgroundImage: `url('https://res.cloudinary.com/dvk8cbn05/image/upload/v1767066242/1000256880_x0a0w7.heic')`,
+          backgroundImage: `url('https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767066242/1000256880_x0a0w7.heic')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: bgOpacity,
