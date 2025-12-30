@@ -32,9 +32,9 @@ const Navigation = () => {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img 
-              src="https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto,w_80,h_80,c_fill/v1767066242/1000256880_x0a0w7"
+              src="https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto,w_80,h_80,c_fill/v1767067406/IMG-20251215-WA0012_1_lqgwtz.jpg"
               alt="HJ"
-              className="w-8 h-8 rounded-full object-cover border border-border"
+              className="w-8 h-8 rounded-full object-cover border-2 border-primary/30 shadow-sm hover:border-primary/60 transition-all duration-300"
             />
           </a>
 
