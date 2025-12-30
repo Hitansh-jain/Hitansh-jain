@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Calendar, Building2, X, CheckCircle, FileText, Download } from "lucide-react";
+import { Award, ExternalLink, Calendar, Building2, X, CheckCircle, FileText, ZoomIn } from "lucide-react";
 import { useState } from "react";
 
 interface CertificationDetails {
@@ -7,7 +7,7 @@ interface CertificationDetails {
   skills?: string[];
   verifiedBy?: string;
   badgeName?: string;
-  certificatePdf?: string;
+  certificateImage?: string;
 }
 
 interface Certification {
@@ -26,6 +26,7 @@ interface Certification {
 const CertificationsSection = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   const certifications: Certification[] = [
     {
@@ -42,7 +43,7 @@ const CertificationsSection = () => {
         userCode: "691f337ee5978bc9456119f1",
         skills: ["Data Analysis", "Forensic Technology"],
         verifiedBy: "Tina McCreery, Chief Human Resources Officer, Deloitte",
-        certificatePdf: "https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767067731/Screenshot_2025-12-30_093828_kiacx0.png",
+        certificateImage: "https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767067731/Screenshot_2025-12-30_093828_kiacx0.png",
       },
     },
     {
@@ -59,6 +60,7 @@ const CertificationsSection = () => {
         badgeName: "5-Day AI Agents Intensive Course with Google",
         verifiedBy: "Kaggle & Google",
         skills: ["AI Agents", "Prompt Engineering", "Google AI Tools"],
+        certificateImage: "https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767067767/download_zmrxg8.png",
       },
     },
     {
@@ -310,17 +312,22 @@ const CertificationsSection = () => {
                 </div>
               )}
 
-              {selectedCert.details?.certificatePdf && (
+              {selectedCert.details?.certificateImage && (
                 <div className="pt-3 border-t border-border/50">
-                  <a
-                    href={selectedCert.details.certificatePdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:underline"
+                  <span className="text-xs text-muted-foreground block mb-2">Certificate Preview</span>
+                  <div 
+                    className="relative cursor-pointer group/img rounded-lg overflow-hidden border border-border/50"
+                    onClick={() => setImagePreview(selectedCert.details?.certificateImage || null)}
                   >
-                    <Download className="w-4 h-4" />
-                    <span className="text-sm font-medium">View/Download Certificate PDF</span>
-                  </a>
+                    <img 
+                      src={selectedCert.details.certificateImage} 
+                      alt="Certificate" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -332,6 +339,29 @@ const CertificationsSection = () => {
             >
               Close
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Full Image Preview Modal */}
+      {imagePreview && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-background/90 backdrop-blur-md"
+            onClick={() => setImagePreview(null)}
+          />
+          <div className="relative max-w-4xl w-full max-h-[90vh] animate-scale-in">
+            <button
+              onClick={() => setImagePreview(null)}
+              className="absolute -top-12 right-0 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img 
+              src={imagePreview} 
+              alt="Certificate Full View" 
+              className="w-full h-auto rounded-xl border border-border shadow-2xl"
+            />
           </div>
         </div>
       )}
