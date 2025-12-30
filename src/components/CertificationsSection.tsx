@@ -202,7 +202,7 @@ const CertificationsSection = () => {
 
       {/* Verification Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-hidden">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-background/80 backdrop-blur-sm"
@@ -210,7 +210,7 @@ const CertificationsSection = () => {
           />
 
           {/* Modal */}
-          <div className="relative glass-card rounded-2xl max-w-lg w-full p-6 animate-scale-in border border-primary/20">
+          <div className="relative glass-card rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 animate-scale-in border border-primary/20">
             {/* Close button */}
             <button
               onClick={() => setSelectedCert(null)}
