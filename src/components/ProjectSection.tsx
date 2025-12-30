@@ -21,7 +21,7 @@ const ProjectSection = () => {
             <div className="absolute top-20 right-20 w-3 h-3 rounded-full bg-primary/40 animate-float delay-200" />
             <div className="absolute bottom-16 left-1/4 w-2 h-2 rounded-full bg-primary/40 animate-float delay-300" />
             <div className="absolute bottom-10 right-1/4 w-2 h-2 rounded-full bg-primary/50 animate-float delay-100" />
-            <div className="text-6xl md:text-8xl font-bold text-primary/20">🚀</div>
+            <div className="text-4xl md:text-6xl font-bold text-primary/30 tracking-wider">Coming Soon</div>
           </div>
 
           {/* Content */}
