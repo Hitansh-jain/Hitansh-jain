@@ -5,12 +5,12 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
       {/* Background Image - cropped from bottom to hide watermark */}
-      <div className="absolute inset-0 opacity-25 overflow-hidden flex items-end justify-center">
+      <div className="absolute inset-0 opacity-30 overflow-hidden flex items-center justify-center">
         <img 
           src={aboutBg} 
           alt="" 
           className="max-w-full h-auto object-contain"
-          style={{ marginBottom: '-25%' }}
+          style={{ marginBottom: '-10%' }}
         />
       </div>
       
@@ -39,7 +39,7 @@ const AboutSection = () => {
         </div>
 
         {/* Story */}
-        <div className="space-y-8 text-muted-foreground leading-relaxed max-w-2xl">
+        <div className="space-y-8 text-foreground/90 leading-relaxed max-w-2xl">
           <p className="text-foreground text-lg">
             I'm Hitansh Jain. Even though I'm not from a Computer Science background, 
             I'm breaking into this field through pure hard work.
