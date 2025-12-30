@@ -1,4 +1,4 @@
-import { Leaf, Sparkles, Code, Eye } from "lucide-react";
+import projectIllustration from "@/assets/project-illustration.png";
 
 const ProjectSection = () => {
   return (
@@ -16,16 +16,16 @@ const ProjectSection = () => {
 
         {/* Coming Soon Card */}
         <div className="glass-card rounded-2xl overflow-hidden group">
-          {/* Header with gradient */}
-          <div className="relative h-48 md:h-64 bg-gradient-to-br from-primary/20 via-neon-green/10 to-transparent overflow-hidden flex items-center justify-center">
-            <div className="text-center">
-              <span className="px-6 py-2 rounded-full bg-primary/20 border border-primary/30 text-lg md:text-xl font-bold text-primary animate-pulse">
-                Coming Soon
-              </span>
-            </div>
+          {/* Header with illustration */}
+          <div className="relative h-56 md:h-72 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent overflow-hidden flex items-center justify-center">
+            <img 
+              src={projectIllustration} 
+              alt="Project illustration" 
+              className="w-48 h-48 md:w-64 md:h-64 object-contain animate-fade-in"
+            />
             {/* Floating particles */}
             <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-primary/60 animate-float" />
-            <div className="absolute top-20 right-20 w-3 h-3 rounded-full bg-neon-green/40 animate-float delay-200" />
+            <div className="absolute top-20 right-20 w-3 h-3 rounded-full bg-primary/40 animate-float delay-200" />
             <div className="absolute bottom-16 left-1/4 w-2 h-2 rounded-full bg-primary/40 animate-float delay-300" />
             <div className="absolute bottom-10 right-1/4 w-2 h-2 rounded-full bg-primary/50 animate-float delay-100" />
           </div>

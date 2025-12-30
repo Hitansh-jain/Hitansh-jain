@@ -1,4 +1,5 @@
 import { Brain, Palette, Users, Lightbulb, Cpu, MessageSquare, Zap, Target, Rocket, Code } from "lucide-react";
+import skillsIllustration from "@/assets/skills-illustration.png";
 
 const SkillsSection = () => {
   const coreSkills = [
@@ -20,16 +21,27 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-24 md:py-32 px-6 border-t border-border">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <p className="text-xs text-muted-foreground tracking-widest uppercase mb-4">
-          Expertise
-        </p>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-          The 'Smart' Stack
-        </h2>
-        <p className="text-muted-foreground mb-16 max-w-lg">
-          Not just skills—a philosophy of leveraging AI to achieve the extraordinary.
-        </p>
+        {/* Header with illustration */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="flex-1">
+            <p className="text-xs text-muted-foreground tracking-widest uppercase mb-4">
+              Expertise
+            </p>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+              The 'Smart' Stack
+            </h2>
+            <p className="text-muted-foreground max-w-lg">
+              Not just skills—a philosophy of leveraging AI to achieve the extraordinary.
+            </p>
+          </div>
+          <div className="w-36 h-36 md:w-44 md:h-44 flex-shrink-0">
+            <img 
+              src={skillsIllustration} 
+              alt="Skills illustration" 
+              className="w-full h-full object-contain animate-fade-in"
+            />
+          </div>
+        </div>
 
         {/* Core Skills */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border mb-16">
