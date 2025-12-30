@@ -3,14 +3,14 @@ import aboutBg from "@/assets/about-bg.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 px-6 border-t border-border relative overflow-hidden">
+    <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
       {/* Background Image - cropped from bottom to hide watermark */}
-      <div className="absolute inset-0 opacity-25 overflow-hidden flex items-start justify-center">
+      <div className="absolute inset-0 opacity-25 overflow-hidden flex items-center justify-center pt-16">
         <img 
           src={aboutBg} 
           alt="" 
           className="max-w-full h-auto object-contain"
-          style={{ marginBottom: '-5%' }}
+          style={{ marginBottom: '-12%' }}
         />
       </div>
       
