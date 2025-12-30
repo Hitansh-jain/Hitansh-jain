@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Calendar, Building2, X, CheckCircle, FileText } from "lucide-react";
+import { Award, ExternalLink, Calendar, Building2, X, CheckCircle, FileText, Download } from "lucide-react";
 import { useState } from "react";
 
 interface CertificationDetails {
@@ -7,6 +7,7 @@ interface CertificationDetails {
   skills?: string[];
   verifiedBy?: string;
   badgeName?: string;
+  certificatePdf?: string;
 }
 
 interface Certification {
@@ -41,6 +42,7 @@ const CertificationsSection = () => {
         userCode: "691f337ee5978bc9456119f1",
         skills: ["Data Analysis", "Forensic Technology"],
         verifiedBy: "Tina McCreery, Chief Human Resources Officer, Deloitte",
+        certificatePdf: "/certificates/accenture-data-analytics-certificate.pdf",
       },
     },
     {
@@ -305,6 +307,20 @@ const CertificationsSection = () => {
                       </span>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {selectedCert.details?.certificatePdf && (
+                <div className="pt-3 border-t border-border/50">
+                  <a
+                    href={selectedCert.details.certificatePdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-primary hover:underline"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span className="text-sm font-medium">View/Download Certificate PDF</span>
+                  </a>
                 </div>
               )}
             </div>
