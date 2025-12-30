@@ -7,7 +7,7 @@ const ProjectSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-mono text-primary uppercase tracking-widest mb-4">
             Featured Work
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
             Project <span className="gradient-text">Spotlight</span>
           </h2>
         </div>

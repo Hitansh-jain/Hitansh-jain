@@ -19,12 +19,12 @@ const Footer = () => {
         </p>
 
         {/* Quick links */}
-        <div className="flex flex-wrap justify-center gap-6 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
           {["About", "Education", "Certifications", "Skills", "Project", "Resume"].map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               {link}
             </a>
