@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
       {/* Background Image - cropped from bottom to hide watermark */}
-      <div className="absolute inset-0 opacity-30 overflow-hidden flex items-center justify-center">
+      <div className="absolute inset-0 opacity-30 overflow-hidden flex items-center justify-center pt-20">
         <img 
           src={aboutBg} 
           alt="" 
