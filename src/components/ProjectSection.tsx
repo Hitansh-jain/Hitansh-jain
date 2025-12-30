@@ -1,5 +1,3 @@
-import projectIllustration from "@/assets/project-illustration.png";
-
 const ProjectSection = () => {
   return (
     <section id="project" className="py-24 md:py-32 px-6">
@@ -16,18 +14,14 @@ const ProjectSection = () => {
 
         {/* Coming Soon Card */}
         <div className="glass-card rounded-2xl overflow-hidden group">
-          {/* Header with illustration */}
+          {/* Header */}
           <div className="relative h-56 md:h-72 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent overflow-hidden flex items-center justify-center">
-            <img 
-              src={projectIllustration} 
-              alt="Project illustration" 
-              className="w-48 h-48 md:w-64 md:h-64 object-contain animate-fade-in"
-            />
             {/* Floating particles */}
             <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-primary/60 animate-float" />
             <div className="absolute top-20 right-20 w-3 h-3 rounded-full bg-primary/40 animate-float delay-200" />
             <div className="absolute bottom-16 left-1/4 w-2 h-2 rounded-full bg-primary/40 animate-float delay-300" />
             <div className="absolute bottom-10 right-1/4 w-2 h-2 rounded-full bg-primary/50 animate-float delay-100" />
+            <div className="text-6xl md:text-8xl font-bold text-primary/20">🚀</div>
           </div>
 
           {/* Content */}
