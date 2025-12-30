@@ -5,12 +5,12 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
       {/* Background Image - cropped from bottom to hide watermark */}
-      <div className="absolute inset-0 opacity-25 overflow-hidden flex items-center justify-center pt-16">
+      <div className="absolute inset-0 opacity-25 overflow-hidden flex items-center justify-center pt-32">
         <img 
           src={aboutBg} 
           alt="" 
           className="max-w-full h-auto object-contain"
-          style={{ marginBottom: '-12%' }}
+          style={{ marginBottom: '-18%' }}
         />
       </div>
       
