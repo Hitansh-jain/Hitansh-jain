@@ -42,7 +42,7 @@ const CertificationsSection = () => {
         userCode: "691f337ee5978bc9456119f1",
         skills: ["Data Analysis", "Forensic Technology"],
         verifiedBy: "Tina McCreery, Chief Human Resources Officer, Deloitte",
-        certificatePdf: "/certificates/accenture-data-analytics-certificate.pdf",
+        certificatePdf: "https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767067731/Screenshot_2025-12-30_093828_kiacx0.png",
       },
     },
     {
