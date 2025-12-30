@@ -63,14 +63,21 @@ const Navigation = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <a
                   key={link.label}
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms',
+                  }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -85,7 +92,7 @@ const Navigation = () => {
               </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
