@@ -6,12 +6,13 @@ const AboutSection = () => {
     <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
       {/* Background Image - cropped from bottom to hide watermark */}
       <div className="absolute inset-0 opacity-10 overflow-hidden flex items-center justify-center pt-28">
-        <img 
-          src={aboutBg} 
-          alt="" 
-          className="max-w-full h-auto object-contain"
-          style={{ marginBottom: '-15%' }}
-        />
+        <div className="overflow-hidden" style={{ clipPath: 'inset(0 0 8% 0)' }}>
+          <img 
+            src={aboutBg} 
+            alt="" 
+            className="max-w-full h-auto object-contain"
+          />
+        </div>
       </div>
       
       <div className="max-w-4xl mx-auto relative z-10">
