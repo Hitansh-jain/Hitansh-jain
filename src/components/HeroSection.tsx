@@ -4,6 +4,7 @@ import { ArrowDown } from "lucide-react";
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
   const fullText = "Real-World Ideas. AI Execution.";
 
   useEffect(() => {
@@ -26,10 +27,38 @@ const HeroSection = () => {
     return () => clearInterval(cursorTimer);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate blur and opacity based on scroll
+  const blurAmount = Math.min(scrollY / 50, 10);
+  const bgOpacity = Math.max(0.1 - scrollY / 2000, 0.02);
+
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+      {/* Background image with fade and scroll blur effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none transition-all duration-300"
+        style={{
+          backgroundImage: `url('/images/hero-bg.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: bgOpacity,
+          filter: `blur(${blurAmount}px)`,
+          transform: `scale(${1 + scrollY / 3000})`,
+        }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/80 pointer-events-none" />
+      
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background pointer-events-none" />
       
       <div className="text-center max-w-3xl mx-auto relative z-10">
         {/* Location */}
