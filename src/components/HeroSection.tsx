@@ -37,7 +37,7 @@ const HeroSection = () => {
 
   // Calculate blur and opacity based on scroll
   const blurAmount = Math.min(scrollY / 50, 10);
-  const bgOpacity = Math.max(0.1 - scrollY / 2000, 0.02);
+  const bgOpacity = Math.max(0.25 - scrollY / 1500, 0.05);
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 pointer-events-none transition-all duration-300"
         style={{
-          backgroundImage: `url('https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767066242/1000256880_x0a0w7.heic')`,
+          backgroundImage: `url('https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767066879/20251215_133331_ardvyw')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: bgOpacity,
