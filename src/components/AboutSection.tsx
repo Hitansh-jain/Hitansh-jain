@@ -3,14 +3,15 @@ import aboutBg from "@/assets/about-bg.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 md:py-44 px-6 border-t border-border relative overflow-hidden min-h-[80vh]">
-      {/* Background Image - hidden on mobile/tablet, only visible on large screens */}
-      <div className="absolute inset-0 opacity-10 overflow-hidden items-center justify-center pt-44 hidden lg:flex">
+    <section id="about" className="py-16 md:py-24 px-4 sm:px-6 border-t border-border relative overflow-hidden">
+      {/* Background Image - visible on all screens with reduced opacity */}
+      <div className="absolute inset-0 opacity-[0.06] overflow-hidden flex items-center justify-center pt-20 md:pt-32">
         <div className="overflow-hidden" style={{ clipPath: 'inset(0 0 8% 0)' }}>
           <img 
             src={aboutBg} 
             alt="" 
-            className="max-w-full h-auto object-contain"
+            className="max-w-full h-auto object-contain select-none pointer-events-none"
+            draggable="false"
           />
         </div>
       </div>

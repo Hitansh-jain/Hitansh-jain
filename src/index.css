@@ -41,6 +41,8 @@
 @layer base {
   * {
     @apply border-border;
+    -webkit-user-drag: none;
+    user-drag: none;
   }
 
   html {
@@ -52,8 +54,24 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
+  img, a, button {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
+  img {
+    pointer-events: none;
+    user-select: none;
+  }
+
   ::selection {
     @apply bg-primary/20 text-foreground;
+  }
+
+  /* Section scroll animation */
+  section {
+    animation: sectionFadeIn 0.5s ease-out;
   }
 }
 
@@ -113,6 +131,17 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Scrollbar */

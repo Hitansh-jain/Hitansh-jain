@@ -126,7 +126,7 @@ const ResumeSection = () => {
   };
 
   return (
-    <section id="resume" className="py-24 md:py-32 px-6 bg-secondary/30">
+    <section id="resume" className="py-16 md:py-24 px-4 sm:px-6 bg-secondary/30">
       <div className="max-w-2xl mx-auto text-center">
         {/* Header */}
         <p className="section-label mb-4">Get In Touch</p>

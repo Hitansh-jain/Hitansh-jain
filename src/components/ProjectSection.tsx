@@ -1,9 +1,9 @@
 const ProjectSection = () => {
   return (
-    <section id="project" className="py-24 md:py-32 px-6">
+    <section id="project" className="py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-mono text-primary uppercase tracking-widest mb-4">
             Featured Work
           </span>
