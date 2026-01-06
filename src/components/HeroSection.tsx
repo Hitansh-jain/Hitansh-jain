@@ -40,7 +40,7 @@ const HeroSection = () => {
   const bgOpacity = Math.max(0.25 - scrollY / 1500, 0.05);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden">
       {/* Background image with fade and scroll blur effect */}
       <div 
         className="absolute inset-0 pointer-events-none transition-all duration-300"
