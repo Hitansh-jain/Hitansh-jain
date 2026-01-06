@@ -1,3 +1,5 @@
+import { ExternalLink } from 'lucide-react';
+
 const ProjectSection = () => {
   return (
     <section id="project" className="py-16 md:py-24 px-4 sm:px-6">
@@ -10,6 +12,32 @@ const ProjectSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
             Project <span className="gradient-text">Spotlight</span>
           </h2>
+        </div>
+
+        {/* Demo Project Card */}
+        <div className="glass-card rounded-2xl overflow-hidden group mb-8">
+          <div className="p-6 md:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h3 className="text-xl md:text-2xl font-bold gradient-text">Eco Waste Wise Agent</h3>
+              <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-mono w-fit">
+                Capstone Project
+              </span>
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              If you want to explore my work, you can check out this demo project that I submitted as my capstone project. More projects will be added over time — the main flagship projects are coming soon!
+            </p>
+            
+            <a 
+              href="https://kaggle.com/competitions/agents-intensive-capstone-project/writeups/new-writeup-1763633367214" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 group/link"
+            >
+              <span>View Project</span>
+              <ExternalLink className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+            </a>
+          </div>
         </div>
 
         {/* Coming Soon Card */}
