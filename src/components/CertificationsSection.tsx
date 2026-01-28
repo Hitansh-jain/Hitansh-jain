@@ -63,6 +63,31 @@ const CertificationsSection = () => {
         certificateImage: "https://res.cloudinary.com/dvk8cbn05/image/upload/f_auto,q_auto/v1767067767/download_zmrxg8.png",
       },
     },
+{
+  id: "outskill",
+  title: "Gen AI Engineering Mastermind",
+  issuer: "Outskill",
+  platform: "Outskill",
+  date: "Completed (date not specified on certificate)",
+  category: "Generative AI",
+  color: "from-green-600 to-lime-500",
+  verifiable: true,
+  details: {
+    recipientName: "Hitansh Jain",
+    skills: [
+      "Generative AI",
+      "AI Engineering",
+      "Prompt Engineering",
+      "Applied AI Systems"
+    ],
+    instructors: [
+      "Ramanathan (Data Scientist at SLK)",
+      "Vishnuvardhan BKM (AI Researcher at Sillval)",
+      "Vaibhav Sisinty (Founder, Outskill)"
+    ],
+    certificateImage: "https://res.cloudinary.com/dvk8cbn05/image/upload/v1769598150/outskill_xrol2b.jpg"
+  },
+},
     {
       id: "shikshapr",
       title: "Advance Diploma in Computer Science",
@@ -105,6 +130,8 @@ const CertificationsSection = () => {
         skills: ["Computer Fundamentals", "MS Office", "Internet Basics", "Digital Literacy"],
       },
     },
+
+
   ];
 
   return (
